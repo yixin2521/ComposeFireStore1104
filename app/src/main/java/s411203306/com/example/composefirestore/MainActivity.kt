@@ -125,8 +125,10 @@ fun Birth(m: Modifier) {
         }
         Button(onClick = {
             db.collection("users")
-            .whereEqualTo("userName", userName)
-            .get()
+            //whereEqualTo("userName", userName)
+                .whereLessThan("userWeight", userWeight)
+
+                .get()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     msg = ""
