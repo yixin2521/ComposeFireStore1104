@@ -1,4 +1,4 @@
-package s411203306.com.example.composefirestore
+﻿package s411203306.com.example.composefirestore
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,6 +13,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import s411203306.com.example.composefirestore.ui.theme.ComposeFireStoreTheme
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.material3.Button
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +34,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeFireStoreTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    /*Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
+
+                     */
+                     Birth(m = Modifier.padding(innerPadding))
+
                 }
             }
         }
@@ -31,17 +49,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun Birth(m: Modifier){
+
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ComposeFireStoreTheme {
-        Greeting("Android")
-    }
-}
